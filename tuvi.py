@@ -473,7 +473,7 @@ class GroupSynastryEngine:
 
 st.set_page_config(page_title="Lá Số Gia Đạo Chuyên Sâu", layout="wide")
 
-st.title("🌟 Phần Mềm Phân Tích Lá Số Gia Đạo Chuyên Sâu v2026")
+st.title("🌟 Phần Mềm Xem Tử vi made by MinhMup")
 st.markdown("Nhập thông tin các thành viên trong gia đình để xem lá số chi tiết và ma trận tương hợp (Synastry).")
 
 with st.sidebar:
@@ -683,4 +683,5 @@ if st.button("🔮 BẮT ĐẦU PHÂN TÍCH LÁ SỐ", type="primary"):
             st.header("🏠 MA TRẬN NĂNG LƯỢNG TOÀN GIA (GROUP)")
             group_engine = GroupSynastryEngine(processed_members)
             group_logs = group_engine.evaluate_group()
+
             for line in group_logs: st.markdown(line)
