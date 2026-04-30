@@ -62,26 +62,202 @@ TU_HOA_MAP = {
 }
 
 TU_HOA_LUAN_GIAI = {
-    "Lộc": {"Mệnh": "Có duyên với tiền bạc, vui vẻ, hay gặp may mắn.", "Huynh Đệ": "Anh em hòa thuận, thường giúp đỡ nhau về tài chính.", "Phu Thê": "Hôn phối mang lại tài lộc.", "Tử Tức": "Con cái ngoan ngoãn, mang lại niềm vui.", "Tài Bạch": "Rất thuận lợi kiếm tiền.", "Tật Ách": "Giải hung cứu khốn.", "Thiên Di": "Ra ngoài hay gặp quý nhân.", "Nô Bộc": "Bạn bè, đối tác đắc lực.", "Quan Lộc": "Công danh suôn sẻ.", "Điền Trạch": "Nhà cửa êm ấm.", "Phúc Đức": "Hưởng phúc dòng họ.", "Phụ Mẫu": "Cha mẹ yêu thương hỗ trợ."},
-    "Quyền": {"Mệnh": "Có uy quyền, năng lực lãnh đạo.", "Huynh Đệ": "Anh em dễ lấn lướt mình.", "Phu Thê": "Vợ/chồng giỏi giang nhưng hay lấn lướt.", "Tử Tức": "Con cái bướng bỉnh, có cá tính mạnh.", "Tài Bạch": "Thích cầm trịch tài chính.", "Tật Ách": "Sức khỏe tốt.", "Thiên Di": "Ra ngoài có uy thế.", "Nô Bộc": "Bạn bè giỏi, cần biết thu phục.", "Quan Lộc": "Sự nghiệp thăng tiến.", "Điền Trạch": "Có tài quản lý tài sản.", "Phúc Đức": "Thích chi phối người khác.", "Phụ Mẫu": "Cha mẹ nghiêm khắc."},
-    "Khoa": {"Mệnh": "Thanh nhã, hiếu học, giải thần.", "Huynh Đệ": "Anh em hiền lành.", "Phu Thê": "Vợ/chồng cư xử nho nhã.", "Tử Tức": "Con cái thông minh, học giỏi.", "Tài Bạch": "Kiếm tiền minh bạch.", "Tật Ách": "Gặp hung hóa cát.", "Thiên Di": "Ra ngoài giữ tiếng thơm.", "Nô Bộc": "Bạn bè tử tế.", "Quan Lộc": "Công việc thiên về học thuật.", "Điền Trạch": "Môi trường sống trí thức.", "Phúc Đức": "Tâm hồn thanh cao.", "Phụ Mẫu": "Cha mẹ hiểu biết."},
-    "Kỵ": {"Mệnh": "Nhiều thăng trầm, hay lo nghĩ.", "Huynh Đệ": "Anh em dễ bất hòa.", "Phu Thê": "Tình duyên trắc trở.", "Tử Tức": "Muộn con hoặc phiền lòng vì con.", "Tài Bạch": "Dòng tiền hay tắc nghẽn.", "Tật Ách": "Dễ mắc bệnh.", "Thiên Di": "Ra ngoài dễ gặp thị phi.", "Nô Bộc": "Dễ bị phản trắc.", "Quan Lộc": "Công việc lận đận.", "Điền Trạch": "Rắc rối giấy tờ nhà đất.", "Phúc Đức": "Hay bồn chồn.", "Phụ Mẫu": "Khắc khẩu với cha mẹ."}
+    "Lộc": {
+        "Mệnh": "Hóa Lộc chiếu Mệnh là đại cát. Bản thân có duyên tài lộc, tính tình hào phóng, cuộc đời ít thiếu thốn. Quý nhân phù trợ nhiều, gặp hung dễ hóa cát. Nếu Lộc đồng thời tọa Lộc Tồn thì phú quý song toàn.",
+        "Huynh Đệ": "Anh chị em hòa thuận, có tình nghĩa về tài chính. Hay được anh em giúp đỡ tiền bạc, hoặc chính mình hào phóng với anh em. Cung này sinh Tài Bạch — anh em là trợ lực làm ăn.",
+        "Phu Thê": "Hôn phối có duyên phận sâu nặng, vợ/chồng mang lại tài lộc và an vui. Cuộc hôn nhân ổn định, ít cãi vã. Nếu Lộc nhập Phu Thê mà đối cung Quan Lộc vô sát, sự nghiệp đôi nhờ hôn nhân mà thăng.",
+        "Tử Tức": "Con cái hiếu thảo, mang phúc về nhà. Dễ có con, hoặc con cái thành đạt hơn cha mẹ. Cung Tử Tức Hóa Lộc còn ám chỉ người có phúc đức về tình cảm, dễ được lòng cấp dưới.",
+        "Tài Bạch": "Cực kỳ thuận lợi về tài chính. Tiền vào nhiều đường, tài lộc chảy về không ngừng. Nếu Lộc Tồn đồng cung thì thành 'Song Lộc' — phú quý cực độ. Thích hợp kinh doanh, đầu tư.",
+        "Tật Ách": "Lộc nhập Tật Ách mang ý nghĩa giải hung — cơ thể khỏe mạnh, tuổi thọ cao. Khi gặp bệnh cũng mau bình phục, hay gặp thầy thuốc giỏi. Sức đề kháng tốt, ít ốm vặt.",
+        "Thiên Di": "Ra ngoài hay gặp quý nhân, bôn ba đất khách dễ phát tài. Thích hợp công việc liên quan xuất ngoại, giao thương quốc tế. Đi xa tốt hơn ở nhà.",
+        "Nô Bộc": "Bạn bè, đồng nghiệp, cấp dưới đắc lực và trung thành. Dễ thu hút người tài phò trợ. Kinh doanh có nhân sự tốt, ít bị phản bội.",
+        "Quan Lộc": "Công danh sự nghiệp hanh thông, được cấp trên tin dùng. Kinh doanh thuận lợi, hay thăng chức. Nếu Văn Xương/Văn Khúc đồng cung thì danh tiếng tốt trong giới chuyên môn.",
+        "Điền Trạch": "Nhà cửa đất đai tốt, dễ tích lũy bất động sản. Môi trường sống êm ấm, gia đạo hòa thuận. Cha mẹ để lại tài sản hoặc tự mình tạo lập được nơi ở tử tế.",
+        "Phúc Đức": "Hưởng phúc tổ tiên, tâm tính lạc quan, ít âu lo. Tinh thần thoải mái, hay có trực giác tốt. Phúc báu nhiều đời chiếu rọi.",
+        "Phụ Mẫu": "Cha mẹ yêu thương, cưng chiều và hỗ trợ tài chính. Hay được bề trên nâng đỡ, giấy tờ hành chính ít trắc trở. Phúc ấm từ cha mẹ dày."
+    },
+    "Quyền": {
+        "Mệnh": "Hóa Quyền chiếu Mệnh — bản thân có uy quyền, cá tính mạnh, năng lực lãnh đạo xuất sắc. Tham vọng cao, không chịu đứng sau người khác. Dễ thành công trong các lĩnh vực đòi hỏi quyết đoán, quản lý.",
+        "Huynh Đệ": "Anh chị em có cá tính mạnh, dễ lấn lướt hoặc tranh giành. Cần khéo léo trong ứng xử với anh em. Tuy nhiên nếu biết phân công, anh em là đội ngũ chiến đấu mạnh.",
+        "Phu Thê": "Vợ/chồng tài giỏi, có bản lĩnh nhưng dễ áp đặt trong hôn nhân. Hai người đều mạnh ý kiến, cần học cách nhường nhịn. Hôn nhân kiểu 'hai thủ lĩnh' — hào hứng nhưng dễ va chạm.",
+        "Tử Tức": "Con cái bướng bỉnh, có ý chí và cá tính riêng. Không dễ uốn nắn nhưng khi lớn dễ thành đạt. Người có Quyền ở Tử Tức cần kiên nhẫn giáo dục con theo hướng tôn trọng tự do.",
+        "Tài Bạch": "Thích nắm quyền về tài chính, giỏi quản lý tiền bạc. Kiếm tiền chủ động, không thích bị chi phối. Tiềm năng tài chính lớn nếu không bị Kỵ xung phá.",
+        "Tật Ách": "Sức khỏe tốt, thể lực mạnh mẽ, ý chí kiên cường. Khi ốm bệnh có khả năng hồi phục nhanh chóng. Quyền ở Tật Ách — tinh thần thắng thể xác.",
+        "Thiên Di": "Ra ngoài có uy thế, dễ làm chủ tình huống. Thích hợp làm lãnh đạo trong công việc đối ngoại, kinh doanh xa nhà. Bôn ba phương xa mà lập nghiệp.",
+        "Nô Bộc": "Có khả năng thu phục nhân tài, cấp dưới phục tùng. Tuy nhiên cần tránh độc đoán với người xung quanh. Quản lý nhân sự tốt nhờ uy quyền.",
+        "Quan Lộc": "Sự nghiệp thăng tiến nhanh, dễ lên vị trí lãnh đạo. Có thực quyền hơn hư danh. Rất phù hợp con đường chính trị, quản lý nhà nước, hoặc làm chủ doanh nghiệp.",
+        "Điền Trạch": "Có tài quản lý và mở rộng tài sản bất động sản. Nhà đất thường tăng giá sau khi mua. Tuy nhiên cung nhà đất Quyền — dễ tranh chấp nếu có sát tinh đồng cung.",
+        "Phúc Đức": "Ý chí mạnh mẽ, thích kiểm soát cuộc sống của mình. Tâm tư phức tạp, hay có những toan tính sâu xa. Phúc báu thiên về ý chí và nghị lực hơn là hưởng thụ.",
+        "Phụ Mẫu": "Cha mẹ nghiêm khắc, có uy quyền hoặc địa vị xã hội. Được cha mẹ kỳ vọng cao. Quan hệ với cấp trên, cơ quan nhà nước mang tính chủ động."
+    },
+    "Khoa": {
+        "Mệnh": "Hóa Khoa chiếu Mệnh — thanh nhã, hiếu học, danh tiếng tốt. Là ngôi sao giải thần, mang lại danh dự và học vấn. Dù gặp hung tinh, Khoa hay hóa giải phần nào. Cuộc đời được tiếng thơm, ít kẻ thù.",
+        "Huynh Đệ": "Anh chị em hiền lành, có học thức, ứng xử lịch sự. Tình cảm anh em nhẹ nhàng ít xung đột. Có thể được anh em đứng ra bảo lãnh danh tiếng.",
+        "Phu Thê": "Vợ/chồng cư xử nho nhã, có học thức. Hôn nhân nên duyên nhờ trí tuệ tương đồng. Ít cãi lộn, giải quyết mâu thuẫn bằng lý lẽ. Tuy nhiên Khoa đôi khi thiếu nồng nhiệt — cần vun đắp cảm xúc.",
+        "Tử Tức": "Con cái thông minh, học giỏi, có xu hướng theo con đường học thuật. Dễ đỗ đạt thi cử. Con là niềm tự hào của gia đình về mặt học vấn.",
+        "Tài Bạch": "Kiếm tiền bằng tài năng và danh tiếng, không thích con đường tắt. Thu nhập từ công việc chuyên môn, tư vấn, giảng dạy. Tài chính ổn định và minh bạch.",
+        "Tật Ách": "Khoa nhập Tật Ách — gặp hung hóa cát trong bệnh tật. Khi ốm hay gặp được thầy thuốc giỏi, điều trị đúng hướng. Sức khỏe tổng thể ổn định.",
+        "Thiên Di": "Ra ngoài được người đời kính trọng, giữ được tiếng thơm nơi xa xứ. Công việc liên quan đến giáo dục, tư vấn quốc tế mang lại danh tiếng.",
+        "Nô Bộc": "Bạn bè, cộng sự tử tế, có học thức và đức hạnh. Dễ kết bạn với người danh giá. Cấp dưới trung thực, làm việc minh bạch.",
+        "Quan Lộc": "Công danh thiên về học thuật, nghiên cứu, chuyên gia. Danh tiếng trong nghề nghiệp tốt. Được đánh giá cao về chuyên môn hơn là quyền lực.",
+        "Điền Trạch": "Môi trường sống yên tĩnh, trí thức. Nhà cửa sạch sẽ, có không khí học hành. Dễ mua được nhà đất qua con đường chính thống, giấy tờ minh bạch.",
+        "Phúc Đức": "Tâm hồn thanh cao, an lạc nội tâm. Hưởng phúc qua đường học vấn và trí tuệ. Hay có trực giác tinh tế, tâm linh nhạy cảm.",
+        "Phụ Mẫu": "Cha mẹ có học thức, cư xử lịch sự. Quan hệ với cấp trên êm đẹp, được bề trên tin tưởng về đạo đức và tài năng."
+    },
+    "Kỵ": {
+        "Mệnh": "Hóa Kỵ tại Mệnh — cuộc đời nhiều thăng trầm, hay gặp chướng ngại không lường trước. Tính hay lo âu, cầu toàn dễ sinh phiền não. Cần nhận thức rõ điểm yếu để hóa giải. Nếu gặp Hóa Lộc đối xung thì giảm bớt hung.",
+        "Huynh Đệ": "Anh chị em dễ bất hòa, có thể tranh chấp tiền bạc hoặc quan điểm. Tình anh em lạnh nhạt hoặc xa cách. Cẩn thận bảo lãnh tài chính cho anh em.",
+        "Phu Thê": "Tình duyên trắc trở, hôn nhân dễ có sóng gió. Vợ/chồng hay hiểu lầm nhau, hoặc một trong hai mang nỗi khổ riêng. Cần kiên nhẫn và bao dung để giữ hôn nhân bền vững.",
+        "Tử Tức": "Muộn con hoặc phiền lòng vì con cái. Con cái dễ gặp khó khăn trong học tập hoặc sức khỏe. Nên chú ý chăm sóc con từ nhỏ. Đôi khi Kỵ ở Tử Tức ám chỉ hao tổn vì con.",
+        "Tài Bạch": "Dòng tiền hay tắc nghẽn, tiền vào rồi lại ra. Dễ bị mất tiền do sơ suất, lừa đảo hoặc đầu tư sai. Cẩn thận ký kết hợp đồng tài chính. Không nên làm bảo lãnh tài chính cho người khác.",
+        "Tật Ách": "Dễ mắc bệnh mãn tính hoặc tai nạn bất ngờ. Sức đề kháng yếu, cần chú trọng sức khỏe định kỳ. Kỵ tại Tật Ách là một trong những dấu hiệu cần cẩn thận nhất về thể chất.",
+        "Thiên Di": "Ra ngoài dễ gặp thị phi, thất bại nơi xa xứ. Đi đường dễ gặp tai nạn, nên cẩn thận phương tiện. Bôn ba không thuận, ở nhà tốt hơn ra ngoài.",
+        "Nô Bộc": "Dễ bị bạn bè, cấp dưới phản trắc hoặc lợi dụng. Cần cẩn thận chọn lọc người hợp tác. Mối quan hệ xã hội dễ trở thành gánh nặng.",
+        "Quan Lộc": "Công việc lận đận, hay gặp cản trở trong sự nghiệp. Dễ bị oan uổng, hiểu lầm trong môi trường công sở. Kinh doanh dễ gặp rủi ro pháp lý. Cần chọn nghề phù hợp tránh cạnh tranh khốc liệt.",
+        "Điền Trạch": "Rắc rối giấy tờ nhà đất, dễ bị tranh chấp hoặc hỏng hóc bất ngờ. Nơi ở không ổn định, hay dọn nhà. Cẩn thận khi ký hợp đồng mua bán bất động sản.",
+        "Phúc Đức": "Hay bồn chồn lo âu không lý do. Tâm thần dễ bất an, hay có suy nghĩ tiêu cực. Cần tu tâm tích đức để hóa giải. Đời sống tâm linh dễ bị nhiễu loạn.",
+        "Phụ Mẫu": "Dễ khắc khẩu với cha mẹ hoặc bề trên. Quan hệ với cơ quan nhà nước dễ trục trặc giấy tờ. Cha mẹ hoặc người thân lớn tuổi hay gặp vấn đề sức khỏe."
+    }
 }
 
 TINH_CACH_MAP = {
-    "Mộc": "Nhân ái, hiền hòa, thẳng thắn. Có chí tiến thủ nhưng đôi khi cố chấp nếu Mộc quá vượng.",
-    "Hỏa": "Nhiệt tình, sáng tạo, năng động, trọng lễ. Tính tình có phần nóng vội, cả thèm chóng chán.",
-    "Thổ": "Trầm ổn, đáng tin cậy, bao dung, trọng tín nghĩa. Làm việc chắc chắn nhưng đôi khi bảo thủ.",
-    "Kim": "Sắc sảo, quyết đoán, trọng nghĩa khí, kiên cường. Rất dứt khoát nhưng đôi khi lạnh lùng.",
-    "Thủy": "Linh hoạt, thông minh, khéo léo ứng xử, nhiều tâm sự. Giỏi thích nghi nhưng khí chất dễ thay đổi."
+    "Mộc": "**Nhân ái, ngay thẳng, có chí tiến thủ.** Người Mộc thường có tấm lòng rộng lượng, trọng nhân nghĩa và tình cảm. Thẳng thắn đến mức đôi khi thiếu khéo léo. Khi Mộc Vượng: sáng tạo, lãnh đạo tốt, đa tài. Khi Mộc Nhược: thiếu kiên định, dễ nản lòng. Khi Mộc quá vượng không có Kim chế: cố chấp, bảo thủ, khó nghe lời khuyên. Mộc người hay suy nghĩ dài hạn, giỏi lập kế hoạch.",
+    "Hỏa": "**Nhiệt tình, sáng tạo, trọng lễ, năng động.** Người Hỏa có sức hút tự nhiên, dễ lôi cuốn người khác. Tính tình bốc đồng, cả thèm chóng chán nếu Hỏa vượng thiếu Thủy điều tiết. Khi Hỏa Vượng: lãnh đạo xuất sắc, rực rỡ trong nghệ thuật và trình diễn. Khi Hỏa Nhược: thiếu tự tin, dễ bị tác động bởi ý kiến người khác. Người Hỏa thường sống vì hiện tại, hành động nhanh nhưng đôi khi thiếu kiên nhẫn.",
+    "Thổ": "**Trầm ổn, đáng tin cậy, bao dung, trọng tín nghĩa.** Người Thổ làm việc chắc chắn, uy tín cao trong cộng đồng. Khi Thổ Vượng: trở thành trụ cột gia đình và xã hội, khéo kết giao. Khi Thổ Nhược: thiếu chính kiến, dễ bị người khác lợi dụng. Khi Thổ quá dày đặc: bảo thủ, trì trệ, khó thay đổi. Người Thổ hay coi trọng sự ổn định hơn cơ hội mạo hiểm.",
+    "Kim": "**Sắc sảo, quyết đoán, trọng nghĩa khí, kiên cường.** Người Kim có bản lĩnh rõ ràng, không thích vòng vo. Khi Kim Vượng: tiên phong, dám nghĩ dám làm, trung thành. Khi Kim Nhược: hay do dự, dễ bị kẻ mạnh lấn át. Khi Kim quá cứng không có Hỏa luyện: cứng nhắc, ít linh hoạt, đôi khi lạnh lùng. Người Kim thường giỏi phán đoán và ra quyết định dứt khoát.",
+    "Thủy": "**Linh hoạt, thông minh, đa mưu, khéo léo ứng xử.** Người Thủy như dòng chảy — biết thích nghi với mọi hoàn cảnh. Khi Thủy Vượng: trí tuệ bén nhọn, giao tiếp xuất sắc, đa tài. Khi Thủy Nhược: thiếu linh hoạt, hay cứng nhắc trong suy nghĩ. Khi Thủy tràn không có Thổ đê điều: phân tán, thiếu trọng tâm, nhiều tâm sự ít hành động. Người Thủy giỏi quan sát và đọc vị tâm lý người khác."
 }
 
 NGHE_NGHIEP_MAP = {
-    "Chính Quan": "Phù hợp nhà nước, hành chính, quản lý, kỷ luật cao.", "Thất Sát": "Quân đội, công an, lãnh đạo, khai phá, mạo hiểm.",
-    "Chính Ấn": "Giáo dục, giảng dạy, nghiên cứu, y tế, văn phòng.", "Thiên Ấn": "Nghệ thuật, y học cổ truyền, tôn giáo, IT, thiết kế.",
-    "Chính Tài": "Tài chính, ngân hàng, kế toán, kinh doanh ổn định.", "Thiên Tài": "Đầu tư, kinh doanh tự do, bán hàng, lợi nhuận đột phá.",
-    "Thực Thần": "Sư phạm, tư vấn, ẩm thực, phúc lợi xã hội.", "Thương Quan": "Nghệ thuật, diễn thuyết, truyền thông, marketing, luật sư.",
-    "Tỷ Kiên": "Tự lập kinh doanh, làm việc nhóm, độc lập.", "Kiếp Tài": "Thể thao, cạnh tranh thương mại, môi giới."
+    "Chính Quan": "Phù hợp công chức nhà nước, hành chính, quản lý hệ thống, luật pháp, kiểm toán. Làm việc trong môi trường kỷ luật cao, tuân thủ quy tắc. Thích hợp thăng tiến theo thâm niên và quy trình chính thống.",
+    "Thất Sát": "Xuất sắc trong quân đội, công an, lực lượng vũ trang, thể thao tranh đấu. Cũng phù hợp với doanh nhân mạo hiểm, nhà đầu tư tiên phong, bác sĩ phẫu thuật, thám tử. Cần môi trường có thách thức và áp lực để phát huy tối đa.",
+    "Chính Ấn": "Giáo dục, giảng dạy đại học, nghiên cứu khoa học, văn phòng chính phủ, y tế công lập, tư vấn học thuật. Giỏi viết lách và truyền đạt kiến thức. Môi trường ổn định, cấu trúc rõ ràng phù hợp nhất.",
+    "Thiên Ấn": "Nghệ thuật, thiết kế sáng tạo, y học cổ truyền, tâm linh, triết học, lập trình IT, nghiên cứu bí ẩn. Tư duy phi tuyến tính, giỏi giải quyết vấn đề phức tạp theo cách riêng. Làm việc tự do hoặc nghiên cứu độc lập phù hợp.",
+    "Chính Tài": "Tài chính, ngân hàng, kế toán, kinh doanh có kế hoạch, quản lý tài sản. Giỏi tích lũy từng bước, ít mạo hiểm. Phù hợp đầu tư dài hạn, bất động sản ổn định, quản lý quỹ.",
+    "Thiên Tài": "Đầu tư mạo hiểm, kinh doanh đa ngành, bán hàng, marketing, môi giới. Giỏi nắm bắt cơ hội tức thời. Lợi nhuận đột phá nhưng rủi ro cao. Phù hợp startup, kinh doanh theo cảm quan thị trường.",
+    "Thực Thần": "Sư phạm, tư vấn tâm lý, ẩm thực, phúc lợi xã hội, nuôi dưỡng, y tế cộng đồng. Tính tình ôn hòa, hay giúp đỡ người khác. Làm việc mang lại phúc lợi cho cộng đồng mang lại nhiều thỏa mãn.",
+    "Thương Quan": "Nghệ thuật biểu diễn, diễn thuyết, truyền thông, marketing sáng tạo, luật sư tranh tụng, nhà văn, nhà báo. Tư duy phản biện sắc bén, không ngại thách thức chuẩn mực. Cần không gian sáng tạo tự do.",
+    "Tỷ Kiên": "Tự lập kinh doanh, làm chủ doanh nghiệp gia đình, hợp tác cùng bạn bè đồng trang lứa. Môi trường bình đẳng, ít thứ bậc phù hợp. Giỏi đoàn kết nhóm khi có mục tiêu chung.",
+    "Kiếp Tài": "Thể thao chuyên nghiệp, cạnh tranh thương mại, môi giới, đấu thầu, bán hàng trực tiếp. Thích thử thách và cạnh tranh. Cần kiềm chế tính bốc đồng để tránh thua lỗ do quyết định vội vàng."
+}
+
+# ==========================================
+# TỪ ĐIỂN LUẬN GIẢI CHÍNH TINH TỬ VI
+# ==========================================
+
+CHINH_TINH_LUAN_GIAI = {
+    "Tử Vi": {
+        "B": "Tử Vi Miếu — vua sao ở vị trí tối thượng. Khí vượng tự chủ, có tài lãnh đạo bẩm sinh, được quý nhân trọng vọng. Cuộc đời thường có bước ngoặt thăng hoa rõ rệt.",
+        "V": "Tử Vi Vượng — uy quyền dồi dào, khả năng tổ chức và điều hành tốt. Được người khác nể phục, dễ thành công trong môi trường nhiều quyết định.",
+        "M": "Tử Vi Bình — tài năng có nhưng cần điều kiện phát huy. Ý chí quyết tâm là chìa khóa. Cần tránh kiêu ngạo.",
+        "Đ": "Tử Vi Hãm — uy lực kém phát huy. Dễ bị cô lập hoặc quyền uy không thực chất. Cần khiêm tốn học hỏi."
+    },
+    "Thiên Cơ": {
+        "B": "Thiên Cơ Miếu — trí tuệ mẫn tiệp, linh hoạt ứng biến xuất sắc. Sở trường phân tích, tham mưu, quyền biến. Học gì cũng nhanh.",
+        "V": "Thiên Cơ Vượng — thông minh lanh lợi, giỏi thích nghi. Tư duy chiến lược tốt. Thích hợp công việc đòi hỏi trí não hơn thể lực.",
+        "M": "Thiên Cơ Bình — thông minh nhưng hay lăn tăn. Suy nghĩ nhiều đôi khi làm chậm hành động. Cần quyết đoán hơn.",
+        "H": "Thiên Cơ Hãm — tài trí không phát huy được, dễ tính toán sai. Cẩn thận kẻ tiểu nhân lợi dụng trí tuệ."
+    },
+    "Thái Dương": {
+        "M": "Thái Dương Miếu (Dần-Mão-Thìn) — mặt trời buổi sáng, quang minh chính đại. Tài năng tỏa sáng, được công nhận rộng rãi. Đặc biệt tốt cho nam giới.",
+        "V": "Thái Dương Vượng — nhiệt huyết, hào phóng, có tầm ảnh hưởng trong cộng đồng. Danh tiếng tốt.",
+        "B": "Thái Dương Bình — ánh sáng vừa đủ. Thành công vừa phải, cần nỗ lực không ngừng.",
+        "H": "Thái Dương Hãm (Thân-Dậu-Tuất-Hợi) — mặt trời lặn. Tài năng bị che khuất. Dễ lao lực mà ít được ghi nhận. Nữ giới gặp Thái Dương Hãm ở Mệnh — chồng hay gặp trắc trở.",
+        "Đ": "Thái Dương Đắc Địa — tương tự Vượng, phát huy tốt trong môi trường phù hợp."
+    },
+    "Vũ Khúc": {
+        "V": "Vũ Khúc Vượng — sao tài bạch mạnh nhất. Cứng rắn, quyết đoán, tự lực cánh sinh. Kiếm tiền bằng chính tài năng và nỗ lực.",
+        "M": "Vũ Khúc Bình — tài lực trung bình, cần kiên trì tích lũy. Tính cách hơi cứng nhắc.",
+        "B": "Vũ Khúc Miếu — tài năng tài chính xuất sắc, cứng rắn như kim loại. Quyết đoán, không sợ khó khăn.",
+        "Đ": "Vũ Khúc Đắc — tiền tài tốt nhưng hay đơn độc. Cần mềm mỏng hơn trong quan hệ."
+    },
+    "Thiên Đồng": {
+        "V": "Thiên Đồng Vượng — phúc thọ, hưởng thụ, cuộc đời bình yên êm ả. Không thích cạnh tranh khốc liệt.",
+        "M": "Thiên Đồng Bình — phúc đức vừa phải. Tính tình lười biếng đôi chút nếu không có sao động lực.",
+        "H": "Thiên Đồng Hãm — phúc bị hao mòn. Dễ trì trệ, thiếu động lực phấn đấu. Cần Sát Tinh kích thích.",
+        "B": "Thiên Đồng Miếu — phúc thọ dồi dào, tâm tính lạc quan hồn nhiên.",
+        "Đ": "Thiên Đồng Đắc — có phúc nhưng hay ỷ lại."
+    },
+    "Liêm Trinh": {
+        "B": "Liêm Trinh Miếu — trong sạch, đoan chính, có tài năng thực sự. Người nguyên tắc và đáng tin.",
+        "M": "Liêm Trinh Bình — tài năng có nhưng dễ bị thị phi vây quanh. Cẩn thận quan hệ xã hội.",
+        "H": "Liêm Trinh Hãm — dễ vướng vào phong lưu, đào hoa hoặc pháp lý. Cần giữ gìn đạo đức.",
+        "V": "Liêm Trinh Vượng — nghiêm túc, kỷ luật, có thành tích trong công việc.",
+        "Đ": "Liêm Trinh Đắc — tương tự Miếu, tài chính và đạo đức đi đôi."
+    },
+    "Thiên Phủ": {
+        "M": "Thiên Phủ Miếu/Bình — kho trời, người giữ tài sản. Thận trọng, tích lũy, bảo thủ theo nghĩa tốt. Gia đình ổn định, con cái đề huề.",
+        "B": "Thiên Phủ Bình — năng lực tốt, tích lũy được nhưng đôi khi thiếu sáng tạo đột phá."
+    },
+    "Thái Âm": {
+        "V": "Thái Âm Vượng — trực giác tốt, tinh tế, nhạy cảm. Tài lộc đến êm ả, không ồn ào. Đặc biệt tốt cho nữ giới.",
+        "M": "Thái Âm Bình — tình cảm dạt dào nhưng dễ mộng mơ. Cần thực tế hơn.",
+        "B": "Thái Âm Miếu — phú quý âm thầm, thường giàu mà không phô trương. Trực giác cực tốt.",
+        "H": "Thái Âm Hãm — cảm xúc bị tổn thương, tài lộc thất thường. Nam gặp Thái Âm Hãm ở Mệnh — hay gặp khó khăn về phụ nữ.",
+        "Đ": "Thái Âm Đắc — tài tình kín đáo, hay tích lũy được tài sản lặng lẽ."
+    },
+    "Tham Lang": {
+        "V": "Tham Lang Vượng — đa tài đa năng, có sức hút mạnh. Giỏi giao tiếp và kiếm tiền theo nhiều cách.",
+        "M": "Tham Lang Bình — tài năng đa dạng nhưng không chuyên sâu. Cần chọn một hướng rõ ràng.",
+        "H": "Tham Lang Hãm — dễ sa vào đào hoa, cờ bạc, chất kích thích nếu không có định hướng.",
+        "B": "Tham Lang Miếu — bản lĩnh mạnh mẽ, thu hút người khác, nhiều tài lẻ xuất sắc."
+    },
+    "Cự Môn": {
+        "V": "Cự Môn Vượng — biện luận sắc bén, ăn nói thuyết phục. Thích hợp luật sư, MC, giảng dạy.",
+        "M": "Cự Môn Bình — hay gặp thị phi và tranh cãi. Cần kiểm soát lời nói.",
+        "H": "Cự Môn Hãm — miệng lưỡi mang họa. Dễ bị hiểu nhầm hoặc tạo mâu thuẫn không đáng. Cẩn thận lời nói.",
+        "B": "Cự Môn Miếu — tài năng ngôn từ đỉnh cao. Ăn nói thuyết phục mọi người."
+    },
+    "Thiên Tướng": {
+        "V": "Thiên Tướng Vượng — công bằng, chính trực, làm trọng tài hoặc quản lý tốt. Được tín nhiệm.",
+        "M": "Thiên Tướng Bình — có khả năng quản lý nhưng đôi khi do dự.",
+        "H": "Thiên Tướng Hãm — dễ bị cuốn vào tranh chấp người khác. Khó giữ trung lập.",
+        "Đ": "Thiên Tướng Đắc — uy tín vừa đủ, làm cầu nối tốt giữa các bên."
+    },
+    "Thiên Lương": {
+        "M": "Thiên Lương Miếu/Bình — ân cứu, thọ tinh. Hay cứu giúp người khác, được ơn báo đáp. Sống thọ, gặp hung hóa cát.",
+        "V": "Thiên Lương Vượng — phúc thọ dày, gặp quý nhân nhiều. Thích hợp nghề y, tư vấn, từ thiện.",
+        "H": "Thiên Lương Hãm — hay lo cho người khác mà quên bản thân. Phúc bị tiêu hao vì người."
+    },
+    "Thất Sát": {
+        "M": "Thất Sát Miếu/Bình — dũng mãnh quyết đoán. Chiến đấu không ngại khó khăn. Thành công sau nhiều thử thách gian nan.",
+        "V": "Thất Sát Vượng — sức mạnh và ý chí vượt trội. Lãnh đạo trong khủng hoảng.",
+        "B": "Thất Sát Bình — dũng cảm có nhưng đôi khi liều lĩnh quá mức."
+    },
+    "Phá Quân": {
+        "M": "Phá Quân Bình — phá cũ lập mới. Hay thay đổi môi trường, sự nghiệp. Sáng tạo trong phá vỡ quy tắc cũ.",
+        "V": "Phá Quân Vượng — đổi mới mạnh mẽ, tiên phong. Không giỏi giữ gìn mà giỏi khai phá.",
+        "H": "Phá Quân Hãm — phá hoại không xây dựng được. Dễ tự làm hỏng cơ hội của mình.",
+        "B": "Phá Quân Miếu — sức mạnh đổi mới lớn, có thể lật ngược cục diện bất lợi."
+    }
+}
+
+# Thần Sát quan trọng và ý nghĩa
+THAN_SAT_LUAN_GIAI = {
+    "Lộc Tồn": "Lộc Tồn — tài lộc cố định, giữ tiền tốt. Tuy nhiên hay ở một mình, cô đơn trong lòng dù bề ngoài đủ đầy.",
+    "Kình Dương": "Kình Dương — hung tinh có tính hai mặt. Trong cung tốt: ý chí mạnh, chiến đấu kiên cường. Trong cung xấu hoặc Hãm: tai họa bất ngờ, phẫu thuật, tai nạn. Cần chính tinh tốt đi kèm.",
+    "Đà La": "Đà La — hung tinh mang tính kéo lê, chậm trễ. Mọi việc hay bị trì hoãn, chướng ngại vật ngầm. Dễ bị người khác gây khó dễ từ phía sau.",
+    "Địa Không": "Địa Không — tinh thần thoát tục, hay mơ mộng. Không hợp với công việc đòi hỏi kết quả vật chất. Dễ bị hao tổn tài lộc đột ngột nếu gặp Tài cung.",
+    "Địa Kiếp": "Địa Kiếp — giống Địa Không nhưng hung hơn về mặt vật chất. Dễ bị mất trộm, hao tán, hoặc đầu tư thất bại bất ngờ.",
+    "Hỏa Tinh": "Hỏa Tinh — bùng phát nhanh. Có thể thúc đẩy thành công nhanh chóng trong cung tốt, hoặc tai họa đột ngột trong cung xấu.",
+    "Linh Tinh": "Linh Tinh — tương tự Hỏa Tinh nhưng âm ỉ hơn. Gây tổn hại chậm và khó nhận ra.",
+    "Tả Phù": "Tả Phù — quý tinh, trợ thủ đắc lực từ phía tả (nam giới). Được quý nhân nam giới giúp đỡ. Trong Quan Lộc: có cấp trên hoặc đồng nghiệp hỗ trợ.",
+    "Hữu Bật": "Hữu Bật — quý tinh, trợ thủ từ phía hữu (nữ giới). Được quý nhân nữ hoặc phụ nữ giúp đỡ. Có khả năng hợp tác tốt.",
+    "Văn Xương": "Văn Xương — văn học tinh hoa, thi cử học vấn xuất sắc. Giỏi viết lách, học thuật, văn chương. Ở Mệnh: người có học thức, lời nói có trọng lượng.",
+    "Văn Khúc": "Văn Khúc — nghệ thuật, âm nhạc, tài năng sáng tạo. Khác Văn Xương ở chỗ thiên về nghệ thuật hơn học thuật. Ở Mệnh: người tài hoa, đa năng.",
+    "Thiên Khôi": "Thiên Khôi — quý nhân tinh. Được bề trên quý mến, giúp đỡ. Đặc biệt tốt khi ở Mệnh hoặc Quan Lộc. Xin việc, thi cử hay gặp may.",
+    "Thiên Việt": "Thiên Việt — tương tự Thiên Khôi nhưng quý nhân đến từ phía khác (thường là nữ giới hoặc theo chiều ngang).",
+    "Bác Sĩ": "Bác Sĩ — thông minh, học vấn cao. Giỏi quản lý chi tiết.",
+    "Thanh Long": "Thanh Long — phát tài đột phá, cơ hội tốt.",
+    "Tiểu Hao": "Tiểu Hao — hao tổn nhỏ, chi tiêu lặt vặt.",
+    "Đại Hao": "Đại Hao — hao tổn lớn, cẩn thận đầu tư và chi tiêu lớn.",
+    "Phi Liêm": "Phi Liêm — hay bị thị phi, tai tiếng.",
+    "Bệnh Phù": "Bệnh Phù — dễ ốm đau, cần chú ý sức khỏe.",
+    "Quan Phủ": "Quan Phủ — dễ gặp kiện tụng, tranh chấp pháp lý.",
+    "Thái Tuế": "Thái Tuế — năm Thái Tuế chiếu cung nào thì cung đó bị xáo trộn. Cẩn thận thay đổi lớn.",
+    "Tang Môn": "Tang Môn — dễ gặp buồn bã, tang sự, chia ly.",
+    "Bạch Hổ": "Bạch Hổ — dễ gặp tai nạn, phẫu thuật, máu me.",
+    "Điếu Khách": "Điếu Khách — dễ gặp người đau yếu, bệnh viện, tang lễ xung quanh."
 }
 
 # ==========================================
@@ -245,6 +421,155 @@ def check_cach_cuc_thau_can(gans, zhis, nhat_chu):
         if match_minor: return f"{get_thap_than(nhat_chu, match_minor)} Cách (Tạp khí thấu)"
     return f"Giả {get_thap_than(nhat_chu, hidden_of_month[0] if hidden_of_month else nhat_chu)} Cách"
 
+def get_than_sat_bat_tu(gans, zhis):
+    """Nhận diện Thần Sát quan trọng trong Bát Tự"""
+    year_zhi, month_zhi, day_zhi, hour_zhi = zhis
+    year_gan, month_gan, day_gan, hour_gan = gans
+    results = []
+    
+    # Thiên Ất Quý Nhân (Thiên Ất Quý Nhân theo Nhật Chủ)
+    quy_nhan_map = {
+        "Giáp": ["Sửu", "Mùi"], "Mậu": ["Sửu", "Mùi"],
+        "Ất": ["Tý", "Thân"], "Kỷ": ["Tý", "Thân"],
+        "Bính": ["Hợi", "Dậu"], "Đinh": ["Hợi", "Dậu"],
+        "Canh": ["Sửu", "Mùi"], "Tân": ["Ngọ", "Dần"],
+        "Nhâm": ["Mão", "Tỵ"], "Quý": ["Mão", "Tỵ"]
+    }
+    qn_zhis = quy_nhan_map.get(day_gan, [])
+    qn_found = [z for z in zhis if z in qn_zhis]
+    if qn_found:
+        results.append(f"✨ **Thiên Ất Quý Nhân** tại {', '.join(qn_found)}: Đây là thần sát quý nhất. Cuộc đời luôn có quý nhân phò trợ lúc khó khăn, tai nạn dễ hóa giải, bề trên tin yêu.")
+    
+    # Văn Xương Quý Nhân
+    van_xuong_map = {"Giáp": "Tỵ", "Ất": "Ngọ", "Bính": "Thân", "Đinh": "Dậu",
+                     "Mậu": "Thân", "Kỷ": "Dậu", "Canh": "Hợi", "Tân": "Tý",
+                     "Nhâm": "Dần", "Quý": "Mão"}
+    vx_zhi = van_xuong_map.get(day_gan)
+    if vx_zhi and vx_zhi in zhis:
+        pos = ["Năm", "Tháng", "Ngày", "Giờ"][zhis.index(vx_zhi)]
+        results.append(f"📚 **Văn Xương Quý Nhân** tại trụ {pos}: Thiên tư thông minh, học hành dễ thành công, thi cử hay đỗ đạt. Viết lách và ngôn từ là điểm mạnh.")
+
+    # Dịch Mã (theo Địa Chi năm hoặc ngày)
+    dich_ma_map = {"Dần": "Thân", "Ngọ": "Thân", "Tuất": "Thân",
+                   "Thân": "Dần", "Tý": "Dần", "Thìn": "Dần",
+                   "Tỵ": "Hợi", "Dậu": "Hợi", "Sửu": "Hợi",
+                   "Hợi": "Tỵ", "Mão": "Tỵ", "Mùi": "Tỵ"}
+    dm_zhi = dich_ma_map.get(year_zhi)
+    if dm_zhi and dm_zhi in [month_zhi, day_zhi, hour_zhi]:
+        results.append(f"🚀 **Dịch Mã** xuất hiện trong lá số: Cuộc đời hay di chuyển, bôn ba. Kinh doanh, công việc liên quan đi lại, vận chuyển, xuất ngoại rất thuận lợi. Ở nhà thì tù túng, ra ngoài thì phát.")
+
+    # Đào Hoa (theo Địa Chi năm)
+    dao_hoa_map = {"Dần": "Mão", "Ngọ": "Mão", "Tuất": "Mão",
+                   "Thân": "Dậu", "Tý": "Dậu", "Thìn": "Dậu",
+                   "Tỵ": "Ngọ", "Dậu": "Ngọ", "Sửu": "Ngọ",
+                   "Hợi": "Tý", "Mão": "Tý", "Mùi": "Tý"}
+    dh_zhi = dao_hoa_map.get(year_zhi)
+    if dh_zhi and dh_zhi in [month_zhi, day_zhi, hour_zhi]:
+        pos = ["Tháng", "Ngày", "Giờ"][([month_zhi, day_zhi, hour_zhi]).index(dh_zhi)]
+        results.append(f"🌸 **Đào Hoa** tại trụ {pos}: Có sức hút về tình cảm, duyên gặp gỡ nhiều. Đào Hoa ở trụ Ngày — cuộc hôn nhân đẹp nhưng cần đề phòng bất trắc về sau. Trụ Giờ — đào hoa muộn hoặc đào hoa ẩn.")
+
+    # Kiếp Sát / Kiếp Tinh (theo Địa Chi năm)
+    kiep_sat_map = {"Dần": "Tỵ", "Ngọ": "Dậu", "Tuất": "Sửu",
+                    "Thân": "Hợi", "Tý": "Mão", "Thìn": "Mùi",
+                    "Tỵ": "Dần", "Dậu": "Ngọ", "Sửu": "Tuất",
+                    "Hợi": "Thân", "Mão": "Tý", "Mùi": "Thìn"}
+    ks_zhi = kiep_sat_map.get(year_zhi)
+    if ks_zhi and ks_zhi in [day_zhi, hour_zhi]:
+        results.append(f"⚠️ **Kiếp Sát** trong lá số: Dễ gặp tai họa bất ngờ, mất mát do rủi ro ngoài ý muốn. Cẩn thận khi tham gia các hoạt động có nguy cơ cao (đi xe, thể thao mạo hiểm).")
+
+    # Hợp trong tứ trụ
+    luc_hop_pairs = [("Tý", "Sửu"), ("Dần", "Hợi"), ("Mão", "Tuất"), ("Thìn", "Dậu"), ("Tỵ", "Thân"), ("Ngọ", "Mùi")]
+    for z1, z2 in luc_hop_pairs:
+        positions = []
+        for pos_name, z in zip(["Năm","Tháng","Ngày","Giờ"], zhis):
+            if z == z1 or z == z2:
+                positions.append(pos_name)
+        if len(positions) >= 2 and z1 in zhis and z2 in zhis:
+            results.append(f"🤝 **Lục Hợp {z1}-{z2}** giữa trụ {positions[0]} và {positions[1]}: Hợp lực tốt, hai trụ này nâng đỡ nhau. Mang ý nghĩa hòa hợp và phát triển trong lĩnh vực tương ứng.")
+
+    # Xung trong tứ trụ
+    luc_xung_pairs = [("Tý", "Ngọ"), ("Sửu", "Mùi"), ("Dần", "Thân"), ("Mão", "Dậu"), ("Thìn", "Tuất"), ("Tỵ", "Hợi")]
+    for z1, z2 in luc_xung_pairs:
+        if z1 in zhis and z2 in zhis:
+            p1 = ["Năm","Tháng","Ngày","Giờ"][zhis.index(z1)]
+            p2 = ["Năm","Tháng","Ngày","Giờ"][zhis.index(z2)]
+            results.append(f"💥 **Xung {z1}-{z2}** giữa trụ {p1} và {p2}: Hai trụ xung khắc nhau. Cuộc đời dễ biến động mạnh trong giai đoạn liên quan. Cần chú ý sức khỏe và quan hệ tương ứng với hai trụ đó.")
+    
+    # Tam Hợp cục
+    tam_hop_groups = [("Thân", "Tý", "Thìn"), ("Dần", "Ngọ", "Tuất"), ("Hợi", "Mão", "Mùi"), ("Tỵ", "Dậu", "Sửu")]
+    for group in tam_hop_groups:
+        found = [z for z in group if z in zhis]
+        if len(found) == 3:
+            results.append(f"🌟 **Tam Hợp Cục {'-'.join(group)}** đầy đủ: Đây là cách cục đặc biệt quý. Năng lượng ngũ hành {ZHI_ELEMENTS[group[1]]} cực vượng, sự nghiệp và tài lộc phát đạt theo hướng {ZHI_ELEMENTS[group[1]]}.")
+        elif len(found) == 2:
+            results.append(f"🔗 **Bán Tam Hợp {'-'.join(found)}**: Có tiềm năng phát triển tốt, cần đại vận hoặc lưu niên kích thêm chi còn lại để phát huy trọn vẹn.")
+
+    if not results:
+        results.append("Không phát hiện Thần Sát đặc biệt nổi bật trong tứ trụ. Cục diện bình ổn.")
+    
+    return results
+
+
+def analyze_thap_than_detail(gans, zhis, nhat_chu):
+    """Phân tích chi tiết thập thần và ý nghĩa thực tế"""
+    results = []
+    nc_el = ELEMENTS.get(nhat_chu, "")
+    
+    than_labels = ["NĂM", "THÁNG", "GIỜ"]
+    other_gans = [gans[0], gans[1], gans[3]]
+    
+    tt_counts = {}
+    for g in other_gans:
+        tt = get_thap_than(nhat_chu, g)
+        if tt:
+            tt_counts[tt] = tt_counts.get(tt, 0) + 1
+    
+    # Phân tích tổ hợp thập thần nổi bật
+    dominant_tt = sorted(tt_counts.items(), key=lambda x: x[1], reverse=True)
+    
+    if dominant_tt:
+        top_tt, count = dominant_tt[0]
+        if count >= 2:
+            results.append(f"**Thập Thần nổi trội: {top_tt} (xuất hiện {count} lần)**")
+        
+        if "Thương Quan" in tt_counts:
+            results.append("🎭 **Thương Quan** hiện diện: Tư duy sáng tạo, không chịu bị ràng buộc. Rất giỏi trong nghệ thuật và truyền thông. Tuy nhiên Thương Quan khắc Quan — cẩn thận quan hệ với cấp trên và trong hôn nhân (đặc biệt nữ giới).")
+        
+        if "Kiếp Tài" in tt_counts:
+            results.append("⚔️ **Kiếp Tài** hiện diện: Tính cạnh tranh cao, hay chia sẻ tài sản ngoài ý muốn. Cẩn thận hợp tác kinh doanh và bảo lãnh tài chính.")
+        
+        if "Thiên Ấn" in tt_counts and "Thực Thần" not in tt_counts:
+            results.append("🔮 **Thiên Ấn** (Chánh Ấn) mạnh: Trực giác tốt, có tài năng thiên phú. Nhưng nếu thiếu Thực/Thương để cân bằng — dễ lười biếng hoặc ỷ lại vào người khác.")
+        
+        if "Chính Quan" in tt_counts and "Chính Ấn" in tt_counts:
+            results.append("🏛️ **Quan Ấn tương sinh**: Danh tiếng và quyền lực đi đôi với học vấn. Cách cục này rất thuận lợi cho con đường công danh và quản lý nhà nước.")
+        
+        if "Chính Tài" in tt_counts and "Chính Ấn" in tt_counts:
+            results.append("💰 **Tài Ấn đồng lộ**: Tài chính và học vấn cùng xuất hiện. Thường thể hiện người vừa giỏi kiếm tiền vừa có học thức. Cẩn thận Tài phá Ấn nếu Tài quá mạnh.")
+
+    # Phân tích trụ Nhật (ngày) — cung Phu Thê ẩn
+    day_zhi = zhis[2]
+    phu_the_hidden = HIDDEN_STEMS.get(day_zhi, [])
+    if phu_the_hidden:
+        phu_the_tt = get_thap_than(nhat_chu, phu_the_hidden[0])
+        phu_the_desc = {
+            "Chính Tài": "người yêu/vợ/chồng hiền lành, ổn định", 
+            "Thiên Tài": "người yêu/vợ/chồng năng động, nhiều tiền nhưng khó nắm",
+            "Chính Quan": "chồng/vợ có địa vị, nghiêm túc (tốt cho nữ)",
+            "Thất Sát": "chồng/vợ mạnh mẽ nhưng dễ có manh tính áp đặt",
+            "Chính Ấn": "chồng/vợ nhân từ, hay lo lắng cho đối phương",
+            "Thiên Ấn": "chồng/vợ cá tính, khác thường, hay bí ẩn",
+            "Thực Thần": "chồng/vợ hiền, dễ sống, hay chiều chuộng",
+            "Thương Quan": "chồng/vợ tài năng nhưng khó tính, hay chỉ trích",
+            "Tỷ Kiên": "chồng/vợ tính cách giống mình, dễ tranh luận",
+            "Kiếp Tài": "chồng/vợ cạnh tranh, dễ tranh giành"
+        }
+        if phu_the_tt in phu_the_desc:
+            results.append(f"💑 **Tàng Can trong trụ Ngày ({day_zhi} chứa {phu_the_hidden[0]} = {phu_the_tt})**: Ẩn trong cung Phu Thê cho thấy {phu_the_desc[phu_the_tt]}.")
+    
+    return results
+
+
 def get_tuan_triet(year_gan, year_zhi):
     can_idx = GAN_LIST.index(year_gan) if year_gan in GAN_LIST else 0
     zhi_idx = ZHI_LIST.index(year_zhi) if year_zhi in ZHI_LIST else 0
@@ -253,6 +578,142 @@ def get_tuan_triet(year_gan, year_zhi):
     triet_map = {"Giáp": (8, 9), "Kỷ": (8, 9), "Ất": (6, 7), "Canh": (6, 7), "Bính": (4, 5), "Tân": (4, 5), "Đinh": (2, 3), "Nhâm": (2, 3), "Mậu": (0, 1), "Quý": (0, 1)}
     triet_1, triet_2 = triet_map.get(year_gan, (0, 1))
     return (tuan_1, tuan_2), (triet_1, triet_2)
+
+
+def luan_giai_cung_tu_vi(cung_name, main_stars_raw, bad_stars, minor_stars, tuan_triet_note, tu_hoa_menh, tu_hoa_luu_nien=None):
+    """Luận giải chi tiết một cung Tử Vi"""
+    lines = []
+
+    main_stars = []
+    for s in main_stars_raw:
+        base = s.split(" (")[0]
+        state_part = s.split("(")[1].rstrip(")") if "(" in s else ""
+        state = state_part.split(")")[0] if state_part else "B"
+        main_stars.append((base, state))
+
+    if not main_stars:
+        lines.append(f"**Cung {cung_name}: Vô Chính Diệu** — Tính linh hoạt, dễ thích nghi. Cung này bị ảnh hưởng nhiều bởi sao chiếu từ cung đối diện.")
+
+    for star_name, state in main_stars:
+        state_map = {"B": "Miếu (★★★★★)", "V": "Vượng (★★★★)", "M": "Bình (★★★)",
+                     "H": "Hãm (★★)", "Đ": "Đắc Địa (★★★★)"}
+        state_display = state_map.get(state, state)
+
+        star_luan = CHINH_TINH_LUAN_GIAI.get(star_name, {})
+        star_detail = star_luan.get(state, star_luan.get("M", f"{star_name} ở trạng thái {state}."))
+        lines.append(f"**{star_name} {state_display}** — {star_detail}")
+
+        if star_name in tu_hoa_menh:
+            hoa_type = tu_hoa_menh[star_name]
+            hoa_detail = TU_HOA_LUAN_GIAI.get(hoa_type, {}).get(cung_name, "")
+            lines.append(f"  → *Hóa {hoa_type} Bản Mệnh*: {hoa_detail}")
+
+        if tu_hoa_luu_nien and star_name in tu_hoa_luu_nien:
+            hoa_type_ln = tu_hoa_luu_nien[star_name]
+            hoa_detail_ln = TU_HOA_LUAN_GIAI.get(hoa_type_ln, {}).get(cung_name, "")
+            lines.append(f"  → *Hóa {hoa_type_ln} Lưu Niên*: {hoa_detail_ln}")
+
+    if minor_stars:
+        minor_notes = []
+        for s in minor_stars:
+            note = THAN_SAT_LUAN_GIAI.get(s, "")
+            if note:
+                minor_notes.append(f"**{s}**: {note.split('—')[1].strip() if '—' in note else note}")
+            else:
+                minor_notes.append(s)
+        if minor_notes:
+            lines.append(f"  *Phụ tinh*: {' | '.join(minor_notes)}")
+
+    if bad_stars:
+        bad_notes = []
+        for s in bad_stars:
+            note = THAN_SAT_LUAN_GIAI.get(s, "")
+            if note:
+                bad_notes.append(f"**{s}**: {note.split('—')[1].strip() if '—' in note else note}")
+            else:
+                bad_notes.append(s)
+        if bad_notes:
+            lines.append(f"  *Sát tinh cần lưu ý*: {' | '.join(bad_notes)}")
+
+    if tuan_triet_note:
+        lines.append(f"  ⚠️ {tuan_triet_note}: Sức mạnh sao bị suy giảm đáng kể. Cần nỗ lực gấp đôi để đạt kết quả bình thường trong lĩnh vực này.")
+
+    return lines
+
+
+def analyze_transit_detail(palaces, menh_idx, dai_han_idx, luu_nien_idx, tu_hoa_menh, luu_tu_hoa, current_year, dai_han_str):
+    """Phân tích chi tiết vận hạn năm"""
+    lines = []
+
+    dh_cung = CUNG_NAMES[(dai_han_idx - menh_idx) % 12]
+    dh_stars = [s.split(" (")[0] for s in palaces[dai_han_idx]["main"]]
+    dh_bad = palaces[dai_han_idx]["bad"]
+
+    lines.append(f"### 🔵 Đại Vận: {dai_han_str}")
+    lines.append(f"Đại Hạn đang đi qua **cung {dh_cung}** ({ZHI_LIST[dai_han_idx]}).")
+
+    cung_y_nghia = {
+        "Mệnh": "Đại hạn chính cung Mệnh — giai đoạn cực kỳ quan trọng, toàn bộ vận mệnh bùng nổ hoặc thách thức lớn.",
+        "Quan Lộc": "Đại hạn tốt cho sự nghiệp, thăng tiến, cơ hội nghề nghiệp dồi dào.",
+        "Tài Bạch": "Đại hạn tài lộc — giai đoạn kiếm tiền thuận lợi, dễ tích lũy.",
+        "Phu Thê": "Đại hạn hôn nhân — dễ lập gia đình hoặc sóng gió hôn nhân tùy sao.",
+        "Tử Tức": "Đại hạn con cái và sáng tạo — sinh con, hoặc phát triển dự án mới.",
+        "Điền Trạch": "Đại hạn nhà đất — mua sắm bất động sản hoặc thay đổi nơi ở.",
+        "Thiên Di": "Đại hạn di chuyển — đi xa, xuất ngoại, thay đổi môi trường lớn.",
+        "Tật Ách": "Đại hạn cần chú ý sức khỏe đặc biệt. Cũng là giai đoạn tự soi lại bản thân.",
+        "Phúc Đức": "Đại hạn tâm linh và hưởng thụ — giai đoạn nội tâm phong phú.",
+        "Phụ Mẫu": "Đại hạn liên quan cha mẹ và học vấn. Tốt cho học hành, thi cử.",
+        "Nô Bộc": "Đại hạn bạn bè, đối tác — hợp tác và mạng lưới quan hệ là chìa khóa.",
+        "Huynh Đệ": "Đại hạn anh em, đồng nghiệp — cạnh tranh và đoàn kết cùng lúc."
+    }
+    lines.append(cung_y_nghia.get(dh_cung, ""))
+
+    if dh_stars:
+        lines.append(f"Chính tinh đại hạn: **{', '.join(dh_stars)}**")
+    if dh_bad:
+        lines.append(f"⚠️ Cung đại hạn có sát tinh **{', '.join(dh_bad)}** — cần cẩn thận các rủi ro liên quan.")
+
+    lines.append(f"\n### 🟡 Lưu Niên {current_year}")
+    ln_cung = CUNG_NAMES[(luu_nien_idx - menh_idx) % 12]
+    ln_stars = [s.split(" (")[0] for s in palaces[luu_nien_idx]["main"]]
+    ln_bad = palaces[luu_nien_idx]["bad"]
+
+    lines.append(f"Lưu Niên chiếu **cung {ln_cung}** ({ZHI_LIST[luu_nien_idx]}).")
+    lines.append(cung_y_nghia.get(ln_cung, ""))
+    if ln_stars:
+        lines.append(f"Sao trong cung lưu niên: **{', '.join(ln_stars)}**")
+    if ln_bad:
+        lines.append(f"⚠️ Lưu niên có sát tinh **{', '.join(ln_bad)}** — đây là điểm cần chú ý trong năm.")
+
+    if luu_tu_hoa:
+        lines.append(f"\n### 🔴 Tứ Hóa Lưu Niên {current_year}")
+        for star, hoa in luu_tu_hoa.items():
+            for idx in range(12):
+                cung_stars = [s.split(" (")[0] for s in palaces[idx]["main"]]
+                if star in cung_stars:
+                    cung_of_star = CUNG_NAMES[(idx - menh_idx) % 12]
+                    hoa_detail = TU_HOA_LUAN_GIAI.get(hoa, {}).get(cung_of_star, f"Hóa {hoa} ảnh hưởng cung {cung_of_star}.")
+                    lines.append(f"**{star} Hóa {hoa}** (tại cung {cung_of_star}): {hoa_detail}")
+                    break
+
+    if dai_han_idx == luu_nien_idx:
+        lines.append(f"\n⚡ **ĐẠI HẠN - LƯU NIÊN ĐỒNG CUNG** ({dh_cung}): Hiệu ứng nhân đôi! Mọi việc liên quan đến cung {dh_cung} được khuếch đại gấp bội năm nay.")
+
+    for star_goc, hoa_goc in tu_hoa_menh.items():
+        for star_luu, hoa_luu in luu_tu_hoa.items():
+            if star_goc == star_luu:
+                if hoa_goc == hoa_luu:
+                    if hoa_goc == "Kỵ":
+                        lines.append(f"\n🚨 **TRÙNG KỴ sao {star_goc}**: Bản mệnh Kỵ gặp Lưu Niên Kỵ — năm cực kỳ cần cẩn thận. Thị phi, hao tổn tài chính, sức khỏe đều có thể bị ảnh hưởng nghiêm trọng.")
+                    elif hoa_goc == "Lộc":
+                        lines.append(f"\n🎉 **TRÙNG LỘC sao {star_goc}**: Bản mệnh Lộc gặp Lưu Niên Lộc — tài lộc nhân đôi, năm đặc biệt thuận lợi!")
+                elif hoa_goc == "Lộc" and hoa_luu == "Kỵ":
+                    lines.append(f"\n⚠️ **Lộc-Kỵ xung chiếu tại {star_goc}**: Tiền có vào nhưng hay bị cản trở, tiêu hao đột ngột.")
+                elif hoa_goc == "Kỵ" and hoa_luu == "Lộc":
+                    lines.append(f"\n💡 **Kỵ được Lộc hóa giải tại {star_goc}**: Năm nay Lộc lưu niên chiếu vào Kỵ bản mệnh — phần nào hóa giải hung khí.")
+
+    return lines
+
 
 def place_trang_sinh_dai_han(cuc_num, gender, is_yang_year, menh_idx):
     is_thuan = (gender == "Nam" and is_yang_year) or (gender == "Nữ" and not is_yang_year)
@@ -484,14 +945,39 @@ with st.sidebar:
 members_input = []
 for i in range(num_members):
     with st.expander(f"👤 Thành viên {i+1}", expanded=True):
-        col1, col2, col3, col4, col5, col6, col7 = st.columns([2,1,1,1,1,1,1.5])
-        name = col1.text_input("Tên gọi", key=f"n_{i}", value=f"Người {i+1}")
-        gender = col2.selectbox("Giới Tính", ["Nam", "Nữ"], key=f"g_{i}")
-        y = col3.number_input("Năm sinh", 1900, 2100, 1990, key=f"y_{i}")
-        m = col4.number_input("Tháng", 1, 12, 1, key=f"m_{i}")
-        d = col5.number_input("Ngày", 1, 31, 1, key=f"d_{i}")
-        h = col6.number_input("Giờ", 0, 23, 12, key=f"h_{i}")
+        KHUNG_GIO = [
+            ("Tý",   "23:00 – 00:59", 23),
+            ("Sửu",  "01:00 – 02:59",  1),
+            ("Dần",  "03:00 – 04:59",  3),
+            ("Mão",  "05:00 – 06:59",  5),
+            ("Thìn", "07:00 – 08:59",  7),
+            ("Tỵ",   "09:00 – 10:59",  9),
+            ("Ngọ",  "11:00 – 12:59", 11),
+            ("Mùi",  "13:00 – 14:59", 13),
+            ("Thân", "15:00 – 16:59", 15),
+            ("Dậu",  "17:00 – 18:59", 17),
+            ("Tuất", "19:00 – 20:59", 19),
+            ("Hợi",  "21:00 – 22:59", 21),
+        ]
+        KHUNG_GIO_LABELS = [f"Giờ {chi}  ({span})" for chi, span, _ in KHUNG_GIO]
+
+        col1, col2, col3, col4, col5, col7 = st.columns([2,1,1,1,1,1.5])
+        name     = col1.text_input("Tên gọi", key=f"n_{i}", value=f"Người {i+1}")
+        gender   = col2.selectbox("Giới Tính", ["Nam", "Nữ"], key=f"g_{i}")
+        y        = col3.number_input("Năm sinh", 1900, 2100, 1990, key=f"y_{i}")
+        m        = col4.number_input("Tháng", 1, 12, 1, key=f"m_{i}")
+        d        = col5.number_input("Ngày", 1, 31, 1, key=f"d_{i}")
         is_solar = col7.checkbox("Lịch Dương", True, key=f"s_{i}")
+
+        gio_idx = st.selectbox(
+            "⏰ Giờ sinh (chọn khung giờ)",
+            options=list(range(12)),
+            format_func=lambda x: KHUNG_GIO_LABELS[x],
+            index=6,
+            key=f"gio_{i}",
+            help="Ví dụ sinh lúc 3h30 → chọn Giờ Dần (03:00–04:59)"
+        )
+        h = KHUNG_GIO[gio_idx][2]
         
         if name.strip():
             members_input.append({
@@ -642,30 +1128,90 @@ if st.button("🔮 BẮT ĐẦU PHÂN TÍCH LÁ SỐ", type="primary"):
             # 3. Luận giải Ngũ Hành
             st.subheader("III. PHÂN TÍCH NGŨ HÀNH & DỤNG THẦN")
             perc_str = " | ".join([f"{k}: {v}%" for k, v in bazi_res['percentages'].items()])
-            st.markdown(f"- **Tỷ lệ:** {perc_str}")
-            st.markdown(f"- **Trạng thái:** {bazi_res['status']}")
+            st.markdown(f"- **Tỷ lệ ngũ hành:** {perc_str}")
+            st.markdown(f"- **Trạng thái Nhật Chủ:** {bazi_res['status']}")
             if bazi_res.get('dieu_hau_msg'):
-                st.markdown(f"- **Góc nhìn Chuyên gia (Điều Hậu):** *{bazi_res['dieu_hau_msg']}*")
-            st.markdown(f"- **Dụng Thần (Khuyên dùng):** <span style='color:blue;font-weight:bold'>{', '.join(bazi_res['dung_than'])}</span> | **Kỵ Thần (Né tránh):** <span style='color:red;font-weight:bold'>{', '.join(bazi_res['ky_than'])}</span>", unsafe_allow_html=True)
+                st.info(f"🌡️ **Điều Hậu Dụng Thần:** {bazi_res['dieu_hau_msg']}")
+            
+            dung_str = ', '.join([f"**{x}**" for x in bazi_res['dung_than']]) if bazi_res['dung_than'] else "Đang xác định"
+            hy_str = ', '.join(bazi_res['hy_than']) if bazi_res['hy_than'] else "—"
+            ky_str = ', '.join([f"**{x}**" for x in bazi_res['ky_than']]) if bazi_res['ky_than'] else "—"
+            st.markdown(f"- 🔵 **Dụng Thần** (cần bổ sung, màu sắc, hướng nhà): {dung_str}")
+            st.markdown(f"- 🟢 **Hỷ Thần** (hỗ trợ, ưu tiên): {hy_str}")
+            st.markdown(f"- 🔴 **Kỵ Thần** (nên tránh): {ky_str}")
+            
+            # Hướng dẫn thực tế theo Dụng Thần
+            el_color = {"Mộc": "xanh lá, xanh lam | Hướng Đông", "Hỏa": "đỏ, cam, tím | Hướng Nam",
+                        "Thổ": "vàng, nâu, be | Hướng Trung tâm", "Kim": "trắng, bạc, xám | Hướng Tây",
+                        "Thủy": "đen, navy, xanh đậm | Hướng Bắc"}
+            if bazi_res['dung_than']:
+                dt = bazi_res['dung_than'][0]
+                st.markdown(f"- 💡 **Gợi ý màu sắc/hướng nhà theo Dụng Thần {dt}:** {el_color.get(dt, '')}")
+
+            # 3b. Thần Sát Bát Tự
+            st.subheader("IIIb. THẦN SÁT & TỔ HỢP ĐẶC BIỆT TRONG TỨ TRỤ")
+            than_sat_list = get_than_sat_bat_tu(gans, zhis)
+            for ts in than_sat_list:
+                st.markdown(f"- {ts}")
+            
+            # 3c. Phân tích thập thần chuyên sâu
+            st.subheader("IIIc. PHÂN TÍCH THẬP THẦN CHUYÊN SÂU")
+            tt_analysis = analyze_thap_than_detail(gans, zhis, nhat_chu)
+            for line in tt_analysis:
+                st.markdown(f"- {line}")
+            
+            cach_cuc_full = check_cach_cuc_thau_can(gans, zhis, nhat_chu)
+            st.markdown(f"- **Cách Cục Thấu Can:** `{cach_cuc_full}`")
 
             # 4. Luận Giải Tính Cách & Nghề Nghiệp
             st.subheader("IV. TÍNH CÁCH & NGHỀ NGHIỆP")
-            st.markdown(f"- **Tử Vi (Thế Mệnh):** {cach_cuc_info}")
-            st.markdown(f"- **Bát Tự ({nhat_chu} - {nc_element}):** {TINH_CACH_MAP.get(nc_element, '')}")
+            st.markdown(f"#### Phân tích Tính Cách Nhật Chủ {nhat_chu} ({nc_element})")
+            st.markdown(TINH_CACH_MAP.get(nc_element, ''))
+            
+            st.markdown(f"#### Cách Cục Tử Vi: Thế Mệnh")
+            st.info(cach_cuc_info)
+            
             base_cach = check_cach_cuc_thau_can(gans, zhis, nhat_chu).split(' Cách')[0].replace('Giả ', '')
-            st.markdown(f"- **Nghề nghiệp ({base_cach}):** {NGHE_NGHIEP_MAP.get(base_cach, 'Cân nhắc định hướng đa dạng.')}")
+            nghe_nghiep_detail = NGHE_NGHIEP_MAP.get(base_cach, 'Cân nhắc định hướng đa dạng — cần xem xét toàn cục.')
+            st.markdown(f"#### Định Hướng Nghề Nghiệp (Cách: {base_cach})")
+            st.markdown(nghe_nghiep_detail)
+
+            # 4b. Luận giải từng cung chính Tử Vi
+            st.subheader("IVb. LUẬN GIẢI CUNG MỆNH VÀ CÁC CUNG QUAN TRỌNG")
+            important_cung_offsets = {
+                "Mệnh": 0, "Quan Lộc": 4, "Tài Bạch": 8, "Phu Thê": 6,
+                "Phúc Đức": 2, "Thiên Di": 7, "Tử Tức": 9, "Tật Ách": 10
+            }
+            for cung_disp, offset in important_cung_offsets.items():
+                idx = (menh_idx + offset) % 12
+                tuan_note = ""
+                if idx in tuan_idx and idx in triet_idx: tuan_note = "Bị Tuần VÀ Triệt"
+                elif idx in tuan_idx: tuan_note = "Bị Tuần Không"
+                elif idx in triet_idx: tuan_note = "Bị Triệt Không"
+                
+                with st.expander(f"🔍 Cung {cung_disp} ({ZHI_LIST[idx]}) — {'sao: ' + ', '.join([s.split(' (')[0] for s in palaces[idx]['main']]) if palaces[idx]['main'] else 'Vô Chính Diệu'}", expanded=(cung_disp == "Mệnh")):
+                    detail_lines = luan_giai_cung_tu_vi(
+                        cung_disp,
+                        palaces[idx]["main"],
+                        palaces[idx]["bad"],
+                        palaces[idx]["minor"],
+                        tuan_note,
+                        tu_hoa_year_goc,
+                        limit_data['luu_tu_hoa']
+                    )
+                    for dl in detail_lines:
+                        st.markdown(dl)
 
             # 5. Vận Hạn Năm
-            st.subheader(f"V. VẬN HẠN NĂM {current_year}")
-            st.markdown(f"- **Đại Vận:** {limit_data['dai_han_info']} (Cư cung {ZHI_LIST[limit_data['dai_han_idx']]})")
-            st.markdown(f"- **Lưu Niên:** Năm {limit_data['target_year']} cư cung {ZHI_LIST[limit_data['luu_nien_idx']]}")
-            
-            for star_goc, hoa_goc in tu_hoa_year_goc.items():
-                for star_luu, hoa_luu in limit_data['luu_tu_hoa'].items():
-                    if star_goc == star_luu and hoa_goc == hoa_luu:
-                        msg = f"⚠️ TRÙNG {hoa_goc} TẠI SAO {star_goc}!"
-                        if hoa_goc == "Kỵ": st.error(f"{msg} (Hạn nặng về thị phi, cản trở)")
-                        elif hoa_goc == "Lộc": st.success(f"{msg} (Cơ hội tài lộc nhân đôi, bùng nổ)")
+            st.subheader(f"V. VẬN HẠN NĂM {current_year} — PHÂN TÍCH CHUYÊN SÂU")
+            transit_lines = analyze_transit_detail(
+                palaces, menh_idx,
+                limit_data['dai_han_idx'], limit_data['luu_nien_idx'],
+                tu_hoa_year_goc, limit_data['luu_tu_hoa'],
+                current_year, limit_data['dai_han_info']
+            )
+            for line in transit_lines:
+                st.markdown(line)
             st.divider()
 
         # 6. Tương Hợp Gia Đình
