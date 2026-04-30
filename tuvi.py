@@ -388,7 +388,7 @@ class TuviRuleEngine:
         elif not self.palaces[self.menh_idx]["main"]:
             base_cach = "VÔ CHÍNH DIỆU (Uyển chuyển, linh hoạt)"
             if bi_tuan_triet: level = "Thành Cách (Đắc Tuần/Triệt)"
-            elif "Tuần" not in self.tuan_idx and "Triệt" not in self.triet_idx: level = "Bán Cách (Dễ trôi dạt)"
+            elif self.menh_idx not in self.tuan_idx and self.menh_idx not in self.triet_idx: level = "Bán Cách (Dễ trôi dạt)"
 
         return f"{base_cach} - Độ thuần: {level} (Có {sat_tinh_count} Sát tinh hội hợp)"
 
@@ -519,11 +519,17 @@ def analyze_thap_than_detail(gans, zhis, nhat_chu):
     other_gans = [gans[0], gans[1], gans[3]]
     
     tt_counts = {}
-    for g in other_gans:
+    for label, g in zip(than_labels, other_gans):
         tt = get_thap_than(nhat_chu, g)
         if tt:
             tt_counts[tt] = tt_counts.get(tt, 0) + 1
     
+    # Hiển thị thập thần từng trụ
+    for label, g in zip(than_labels, other_gans):
+        tt = get_thap_than(nhat_chu, g)
+        if tt:
+            results.append(f"📌 Trụ **{label}** ({g}): **{tt}**")
+
     # Phân tích tổ hợp thập thần nổi bật
     dominant_tt = sorted(tt_counts.items(), key=lambda x: x[1], reverse=True)
     
