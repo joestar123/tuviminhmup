@@ -577,11 +577,45 @@ def analyze_thap_than_detail(gans, zhis, nhat_chu):
 
 
 def get_tuan_triet(year_gan, year_zhi):
-    can_idx = GAN_LIST.index(year_gan) if year_gan in GAN_LIST else 0
-    zhi_idx = ZHI_LIST.index(year_zhi) if year_zhi in ZHI_LIST else 0
-    diff = (zhi_idx - can_idx) % 12
-    tuan_1, tuan_2 = (diff - 2) % 12, (diff - 1) % 12
-    triet_map = {"Giáp": (8, 9), "Kỷ": (8, 9), "Ất": (6, 7), "Canh": (6, 7), "Bính": (4, 5), "Tân": (4, 5), "Đinh": (2, 3), "Nhâm": (2, 3), "Mậu": (0, 1), "Quý": (0, 1)}
+    # Tuần Không: mỗi Lục Thập Hoa Giáp có 10 cặp Can-Chi, 2 Chi không xuất hiện → đó là 2 chi Tuần Không
+    # Tra bảng cố định theo Can-Chi năm (60 hoa giáp → nhóm 10 → 2 chi trống)
+    TUAN_MAP = {
+        # Giáp Tý → Quý Dậu: Tuất Hợi trống
+        "Giáp Tý": (10, 11), "Ất Sửu": (10, 11), "Bính Dần": (10, 11), "Đinh Mão": (10, 11),
+        "Mậu Thìn": (10, 11), "Kỷ Tỵ": (10, 11), "Canh Ngọ": (10, 11), "Tân Mùi": (10, 11),
+        "Nhâm Thân": (10, 11), "Quý Dậu": (10, 11),
+        # Giáp Tuất → Quý Mùi: Thân Dậu trống
+        "Giáp Tuất": (8, 9), "Ất Hợi": (8, 9), "Bính Tý": (8, 9), "Đinh Sửu": (8, 9),
+        "Mậu Dần": (8, 9), "Kỷ Mão": (8, 9), "Canh Thìn": (8, 9), "Tân Tỵ": (8, 9),
+        "Nhâm Ngọ": (8, 9), "Quý Mùi": (8, 9),
+        # Giáp Thân → Quý Tỵ: Ngọ Mùi trống
+        "Giáp Thân": (6, 7), "Ất Dậu": (6, 7), "Bính Tuất": (6, 7), "Đinh Hợi": (6, 7),
+        "Mậu Tý": (6, 7), "Kỷ Sửu": (6, 7), "Canh Dần": (6, 7), "Tân Mão": (6, 7),
+        "Nhâm Thìn": (6, 7), "Quý Tỵ": (6, 7),
+        # Giáp Ngọ → Quý Mão: Thìn Tỵ trống
+        "Giáp Ngọ": (4, 5), "Ất Mùi": (4, 5), "Bính Thân": (4, 5), "Đinh Dậu": (4, 5),
+        "Mậu Tuất": (4, 5), "Kỷ Hợi": (4, 5), "Canh Tý": (4, 5), "Tân Sửu": (4, 5),
+        "Nhâm Dần": (4, 5), "Quý Mão": (4, 5),
+        # Giáp Thìn → Quý Sửu: Dần Mão trống
+        "Giáp Thìn": (2, 3), "Ất Tỵ": (2, 3), "Bính Ngọ": (2, 3), "Đinh Mùi": (2, 3),
+        "Mậu Thân": (2, 3), "Kỷ Dậu": (2, 3), "Canh Tuất": (2, 3), "Tân Hợi": (2, 3),
+        "Nhâm Tý": (2, 3), "Quý Sửu": (2, 3),
+        # Giáp Dần → Quý Hợi: Tý Sửu trống
+        "Giáp Dần": (0, 1), "Ất Mão": (0, 1), "Bính Thìn": (0, 1), "Đinh Tỵ": (0, 1),
+        "Mậu Ngọ": (0, 1), "Kỷ Mùi": (0, 1), "Canh Thân": (0, 1), "Tân Dậu": (0, 1),
+        "Nhâm Tuất": (0, 1), "Quý Hợi": (0, 1),
+    }
+    key = f"{year_gan} {year_zhi}"
+    tuan_1, tuan_2 = TUAN_MAP.get(key, (10, 11))
+
+    # Triệt Lộ: tra theo Can năm (bảng cố định)
+    triet_map = {
+        "Giáp": (8, 9), "Kỷ": (8, 9),
+        "Ất": (6, 7),   "Canh": (6, 7),
+        "Bính": (4, 5), "Tân": (4, 5),
+        "Đinh": (2, 3), "Nhâm": (2, 3),
+        "Mậu": (0, 1),  "Quý": (0, 1),
+    }
     triet_1, triet_2 = triet_map.get(year_gan, (0, 1))
     return (tuan_1, tuan_2), (triet_1, triet_2)
 
@@ -705,18 +739,19 @@ def analyze_transit_detail(palaces, menh_idx, dai_han_idx, luu_nien_idx, tu_hoa_
     if dai_han_idx == luu_nien_idx:
         lines.append(f"\n⚡ **ĐẠI HẠN - LƯU NIÊN ĐỒNG CUNG** ({dh_cung}): Hiệu ứng nhân đôi! Mọi việc liên quan đến cung {dh_cung} được khuếch đại gấp bội năm nay.")
 
-    for star_goc, hoa_goc in tu_hoa_menh.items():
-        for star_luu, hoa_luu in luu_tu_hoa.items():
-            if star_goc == star_luu:
-                if hoa_goc == hoa_luu:
-                    if hoa_goc == "Kỵ":
-                        lines.append(f"\n🚨 **TRÙNG KỴ sao {star_goc}**: Bản mệnh Kỵ gặp Lưu Niên Kỵ — năm cực kỳ cần cẩn thận. Thị phi, hao tổn tài chính, sức khỏe đều có thể bị ảnh hưởng nghiêm trọng.")
-                    elif hoa_goc == "Lộc":
-                        lines.append(f"\n🎉 **TRÙNG LỘC sao {star_goc}**: Bản mệnh Lộc gặp Lưu Niên Lộc — tài lộc nhân đôi, năm đặc biệt thuận lợi!")
-                elif hoa_goc == "Lộc" and hoa_luu == "Kỵ":
-                    lines.append(f"\n⚠️ **Lộc-Kỵ xung chiếu tại {star_goc}**: Tiền có vào nhưng hay bị cản trở, tiêu hao đột ngột.")
-                elif hoa_goc == "Kỵ" and hoa_luu == "Lộc":
-                    lines.append(f"\n💡 **Kỵ được Lộc hóa giải tại {star_goc}**: Năm nay Lộc lưu niên chiếu vào Kỵ bản mệnh — phần nào hóa giải hung khí.")
+    if tu_hoa_menh and luu_tu_hoa:
+        for star_goc, hoa_goc in tu_hoa_menh.items():
+            for star_luu, hoa_luu in luu_tu_hoa.items():
+                if star_goc == star_luu:
+                    if hoa_goc == hoa_luu:
+                        if hoa_goc == "Kỵ":
+                            lines.append(f"\n🚨 **TRÙNG KỴ sao {star_goc}**: Bản mệnh Kỵ gặp Lưu Niên Kỵ — năm cực kỳ cần cẩn thận. Thị phi, hao tổn tài chính, sức khỏe đều có thể bị ảnh hưởng nghiêm trọng.")
+                        elif hoa_goc == "Lộc":
+                            lines.append(f"\n🎉 **TRÙNG LỘC sao {star_goc}**: Bản mệnh Lộc gặp Lưu Niên Lộc — tài lộc nhân đôi, năm đặc biệt thuận lợi!")
+                    elif hoa_goc == "Lộc" and hoa_luu == "Kỵ":
+                        lines.append(f"\n⚠️ **Lộc-Kỵ xung chiếu tại {star_goc}**: Tiền có vào nhưng hay bị cản trở, tiêu hao đột ngột.")
+                    elif hoa_goc == "Kỵ" and hoa_luu == "Lộc":
+                        lines.append(f"\n💡 **Kỵ được Lộc hóa giải tại {star_goc}**: Năm nay Lộc lưu niên chiếu vào Kỵ bản mệnh — phần nào hóa giải hung khí.")
 
     return lines
 
@@ -733,18 +768,83 @@ def place_trang_sinh_dai_han(cuc_num, gender, is_yang_year, menh_idx):
     return ts_dict, dh_dict
 
 def get_cuc(can_menh, zhi_menh):
-    can_val = {"Giáp": 1, "Ất": 1, "Bính": 2, "Đinh": 2, "Mậu": 3, "Kỷ": 3, "Canh": 4, "Tân": 4, "Nhâm": 5, "Quý": 5}.get(can_menh, 1)
-    zhi_val = {"Tý": 1, "Sửu": 1, "Ngọ": 1, "Mùi": 1, "Dần": 2, "Mão": 2, "Thân": 2, "Dậu": 2, "Thìn": 3, "Tỵ": 3, "Tuất": 3, "Hợi": 3}.get(zhi_menh, 1)
-    na_yin = (can_val + zhi_val) % 5 or 5
-    return {1: ("Kim Tứ Cục", 4), 2: ("Thủy Nhị Cục", 2), 3: ("Hỏa Lục Cục", 6), 4: ("Thổ Ngũ Cục", 5), 5: ("Mộc Tam Cục", 3)}[na_yin]
+    # Bảng Nạp Âm Ngũ Hành theo từng cặp Can-Chi (Lục Thập Hoa Giáp)
+    # Giá trị: (tên cục, số cục)
+    NA_AM_MAP = {
+        # Giáp Tý, Ất Sửu → Hải Trung Kim → Kim Tứ Cục
+        "Giáp Tý": ("Kim Tứ Cục", 4), "Ất Sửu": ("Kim Tứ Cục", 4),
+        # Bính Dần, Đinh Mão → Lô Trung Hỏa → Hỏa Lục Cục
+        "Bính Dần": ("Hỏa Lục Cục", 6), "Đinh Mão": ("Hỏa Lục Cục", 6),
+        # Mậu Thìn, Kỷ Tỵ → Đại Lâm Mộc → Mộc Tam Cục
+        "Mậu Thìn": ("Mộc Tam Cục", 3), "Kỷ Tỵ": ("Mộc Tam Cục", 3),
+        # Canh Ngọ, Tân Mùi → Lộ Bàng Thổ → Thổ Ngũ Cục
+        "Canh Ngọ": ("Thổ Ngũ Cục", 5), "Tân Mùi": ("Thổ Ngũ Cục", 5),
+        # Nhâm Thân, Quý Dậu → Kiếm Phong Kim → Kim Tứ Cục
+        "Nhâm Thân": ("Kim Tứ Cục", 4), "Quý Dậu": ("Kim Tứ Cục", 4),
+        # Giáp Tuất, Ất Hợi → Sơn Đầu Hỏa → Hỏa Lục Cục
+        "Giáp Tuất": ("Hỏa Lục Cục", 6), "Ất Hợi": ("Hỏa Lục Cục", 6),
+        # Bính Tý, Đinh Sửu → Giản Hạ Thủy → Thủy Nhị Cục
+        "Bính Tý": ("Thủy Nhị Cục", 2), "Đinh Sửu": ("Thủy Nhị Cục", 2),
+        # Mậu Dần, Kỷ Mão → Thành Đầu Thổ → Thổ Ngũ Cục
+        "Mậu Dần": ("Thổ Ngũ Cục", 5), "Kỷ Mão": ("Thổ Ngũ Cục", 5),
+        # Canh Thìn, Tân Tỵ → Bạch Lạp Kim → Kim Tứ Cục
+        "Canh Thìn": ("Kim Tứ Cục", 4), "Tân Tỵ": ("Kim Tứ Cục", 4),
+        # Nhâm Ngọ, Quý Mùi → Dương Liễu Mộc → Mộc Tam Cục
+        "Nhâm Ngọ": ("Mộc Tam Cục", 3), "Quý Mùi": ("Mộc Tam Cục", 3),
+        # Giáp Thân, Ất Dậu → Tuyền Trung Thủy → Thủy Nhị Cục
+        "Giáp Thân": ("Thủy Nhị Cục", 2), "Ất Dậu": ("Thủy Nhị Cục", 2),
+        # Bính Tuất, Đinh Hợi → Ốc Thượng Thổ → Thổ Ngũ Cục
+        "Bính Tuất": ("Thổ Ngũ Cục", 5), "Đinh Hợi": ("Thổ Ngũ Cục", 5),
+        # Mậu Tý, Kỷ Sửu → Tích Lịch Hỏa → Hỏa Lục Cục
+        "Mậu Tý": ("Hỏa Lục Cục", 6), "Kỷ Sửu": ("Hỏa Lục Cục", 6),
+        # Canh Dần, Tân Mão → Tùng Bách Mộc → Mộc Tam Cục
+        "Canh Dần": ("Mộc Tam Cục", 3), "Tân Mão": ("Mộc Tam Cục", 3),
+        # Nhâm Thìn, Quý Tỵ → Trường Lưu Thủy → Thủy Nhị Cục
+        "Nhâm Thìn": ("Thủy Nhị Cục", 2), "Quý Tỵ": ("Thủy Nhị Cục", 2),
+        # Giáp Ngọ, Ất Mùi → Sa Trung Kim → Kim Tứ Cục
+        "Giáp Ngọ": ("Kim Tứ Cục", 4), "Ất Mùi": ("Kim Tứ Cục", 4),
+        # Bính Thân, Đinh Dậu → Sơn Hạ Hỏa → Hỏa Lục Cục
+        "Bính Thân": ("Hỏa Lục Cục", 6), "Đinh Dậu": ("Hỏa Lục Cục", 6),
+        # Mậu Tuất, Kỷ Hợi → Bình Địa Mộc → Mộc Tam Cục
+        "Mậu Tuất": ("Mộc Tam Cục", 3), "Kỷ Hợi": ("Mộc Tam Cục", 3),
+        # Canh Tý, Tân Sửu → Bích Thượng Thổ → Thổ Ngũ Cục
+        "Canh Tý": ("Thổ Ngũ Cục", 5), "Tân Sửu": ("Thổ Ngũ Cục", 5),
+        # Nhâm Dần, Quý Mão → Kim Bạch Kim → Kim Tứ Cục
+        "Nhâm Dần": ("Kim Tứ Cục", 4), "Quý Mão": ("Kim Tứ Cục", 4),
+        # Giáp Thìn, Ất Tỵ → Phú Đăng Hỏa → Hỏa Lục Cục
+        "Giáp Thìn": ("Hỏa Lục Cục", 6), "Ất Tỵ": ("Hỏa Lục Cục", 6),
+        # Bính Ngọ, Đinh Mùi → Thiên Hà Thủy → Thủy Nhị Cục
+        "Bính Ngọ": ("Thủy Nhị Cục", 2), "Đinh Mùi": ("Thủy Nhị Cục", 2),
+        # Mậu Thân, Kỷ Dậu → Đại Dịch Thổ → Thổ Ngũ Cục
+        "Mậu Thân": ("Thổ Ngũ Cục", 5), "Kỷ Dậu": ("Thổ Ngũ Cục", 5),
+        # Canh Tuất, Tân Hợi → Thoa Xuyến Kim → Kim Tứ Cục
+        "Canh Tuất": ("Kim Tứ Cục", 4), "Tân Hợi": ("Kim Tứ Cục", 4),
+        # Nhâm Tý, Quý Sửu → Tang Đố Mộc → Mộc Tam Cục
+        "Nhâm Tý": ("Mộc Tam Cục", 3), "Quý Sửu": ("Mộc Tam Cục", 3),
+        # Giáp Dần, Ất Mão → Đại Khê Thủy → Thủy Nhị Cục
+        "Giáp Dần": ("Thủy Nhị Cục", 2), "Ất Mão": ("Thủy Nhị Cục", 2),
+        # Bính Thìn, Đinh Tỵ → Sa Trung Thổ → Thổ Ngũ Cục
+        "Bính Thìn": ("Thổ Ngũ Cục", 5), "Đinh Tỵ": ("Thổ Ngũ Cục", 5),
+        # Mậu Ngọ, Kỷ Mùi → Thiên Thượng Hỏa → Hỏa Lục Cục
+        "Mậu Ngọ": ("Hỏa Lục Cục", 6), "Kỷ Mùi": ("Hỏa Lục Cục", 6),
+        # Canh Thân, Tân Dậu → Thạch Lựu Mộc → Mộc Tam Cục
+        "Canh Thân": ("Mộc Tam Cục", 3), "Tân Dậu": ("Mộc Tam Cục", 3),
+        # Nhâm Tuất, Quý Hợi → Đại Hải Thủy → Thủy Nhị Cục
+        "Nhâm Tuất": ("Thủy Nhị Cục", 2), "Quý Hợi": ("Thủy Nhị Cục", 2),
+    }
+    key = f"{can_menh} {zhi_menh}"
+    return NA_AM_MAP.get(key, ("Mộc Tam Cục", 3))
 
 def build_tuvi_palaces(lunar, gender, gans, zhis):
     lunar_month = abs(lunar.getMonth())
     hour_idx = ZHI_LIST.index(zhis[3]) if zhis[3] in ZHI_LIST else 0
     menh_idx = (2 + lunar_month - hour_idx) % 12
     
-    start_idx = {"Giáp": 2, "Kỷ": 2, "Ất": 4, "Canh": 4, "Bính": 6, "Tân": 6, "Đinh": 8, "Nhâm": 8, "Mậu": 0, "Quý": 0}.get(gans[0], 0)
-    can_menh = GAN_LIST[(start_idx + (menh_idx - 2 if menh_idx >= 2 else menh_idx + 10)) % 10]
+    # Ngũ Hổ Độn: Can tháng Dần (chi index 2) theo Can năm
+    # Giáp/Kỷ→Bính(2), Ất/Canh→Mậu(4), Bính/Tân→Canh(6), Đinh/Nhâm→Nhâm(8), Mậu/Quý→Giáp(0)
+    ngu_ho_don_start = {"Giáp": 2, "Kỷ": 2, "Ất": 4, "Canh": 4, "Bính": 6, "Tân": 6, "Đinh": 8, "Nhâm": 8, "Mậu": 0, "Quý": 0}.get(gans[0], 0)
+    steps_from_dan = (menh_idx - 2) % 12
+    can_menh = GAN_LIST[(ngu_ho_don_start + steps_from_dan) % 10]
     zhi_menh = ZHI_LIST[menh_idx]
     cuc_name, cuc_num = get_cuc(can_menh, zhi_menh)
     
@@ -835,8 +935,11 @@ class TransitEngine:
             dh_str = f"Đại Vận {start_age}-{start_age+9}"
             
         offset = target_year - 1984
-        target_can_idx = offset % 10
+        target_can_idx = offset % 10   # Python modulo luôn dương, nhưng verify rõ ràng
         target_zhi_idx = offset % 12
+        # Đảm bảo dương (Python xử lý đúng, nhưng explicit cho rõ ràng)
+        target_can_idx = target_can_idx % 10
+        target_zhi_idx = target_zhi_idx % 12
         target_can = GAN_LIST[target_can_idx]
         target_zhi = ZHI_LIST[target_zhi_idx]
         luu_nien_idx = target_zhi_idx
@@ -897,6 +1000,7 @@ class SynastryEngine:
             
         details.append(f"**Góc nhìn bên ngoài (Tuổi):** {chi1} và {chi2} là **{chi_rel}**. {chi_desc}")
         score += chi_score
+        score = min(score, 100)  # Cap tối đa 100
         
         if score >= 80: rating = "RẤT TỐT (Tri kỷ / Đối tác vàng)"
         elif score >= 60: rating = "KHÁ TỐT (Hòa hợp, ít sóng gió)"
