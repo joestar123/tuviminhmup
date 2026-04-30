@@ -735,7 +735,7 @@ def get_cuc(can_menh, zhi_menh):
 def build_tuvi_palaces(lunar, gender, gans, zhis):
     lunar_month = abs(lunar.getMonth())
     hour_idx = ZHI_LIST.index(zhis[3]) if zhis[3] in ZHI_LIST else 0
-    menh_idx = (2 + (lunar_month - 1) - hour_idx) % 12
+    menh_idx = (2 + lunar_month - hour_idx) % 12
     
     start_idx = {"Giáp": 2, "Kỷ": 2, "Ất": 4, "Canh": 4, "Bính": 6, "Tân": 6, "Đinh": 8, "Nhâm": 8, "Mậu": 0, "Quý": 0}.get(gans[0], 0)
     can_menh = GAN_LIST[(start_idx + (menh_idx - 2 if menh_idx >= 2 else menh_idx + 10)) % 10]
@@ -747,7 +747,12 @@ def build_tuvi_palaces(lunar, gender, gans, zhis):
     day = lunar.getDay()
     y = math.ceil(day / cuc_num)
     diff = (y * cuc_num) - day
-    tu_vi_idx = (y + 1 - diff) % 12 if diff % 2 == 1 else (y + 1 + diff) % 12
+    if diff == 0:
+        tu_vi_idx = y % 12
+    elif diff % 2 == 1:
+        tu_vi_idx = (y + 1 - diff) % 12
+    else:
+        tu_vi_idx = (y + 1 + diff) % 12
     
     palaces[tu_vi_idx]["main"].append(f"Tử Vi ({STAR_STATE['Tử Vi'][tu_vi_idx]})")
     palaces[(tu_vi_idx - 1) % 12]["main"].append(f"Thiên Cơ ({STAR_STATE['Thiên Cơ'][(tu_vi_idx - 1) % 12]})")
@@ -756,7 +761,7 @@ def build_tuvi_palaces(lunar, gender, gans, zhis):
     palaces[(tu_vi_idx - 5) % 12]["main"].append(f"Thiên Đồng ({STAR_STATE['Thiên Đồng'][(tu_vi_idx - 5) % 12]})")
     palaces[(tu_vi_idx - 8) % 12]["main"].append(f"Liêm Trinh ({STAR_STATE['Liêm Trinh'][(tu_vi_idx - 8) % 12]})")
     
-    tp = (4 - tu_vi_idx) % 12
+    tp = (tu_vi_idx + 2) % 12
     palaces[tp]["main"].append(f"Thiên Phủ ({STAR_STATE['Thiên Phủ'][tp]})")
     palaces[(tp + 1) % 12]["main"].append(f"Thái Âm ({STAR_STATE['Thái Âm'][(tp + 1) % 12]})")
     palaces[(tp + 2) % 12]["main"].append(f"Tham Lang ({STAR_STATE['Tham Lang'][(tp + 2) % 12]})")
